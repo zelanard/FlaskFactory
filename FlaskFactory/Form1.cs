@@ -1,19 +1,12 @@
 ﻿using FlaskFactory.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FlaskFactory
 {
     public partial class Form1 : Form
     {
-        private Factory Factory;
+        private Factory Factory = null;
         public Form1()
         {
             InitializeComponent();
@@ -22,6 +15,12 @@ namespace FlaskFactory
 
         private void Form1_Shown(object sender, EventArgs e)
         {
+            if (!Form1.Instance.IsHandleCreated)
+            {
+                // Force handle creation
+                Form1.Instance.CreateHandle();
+            }
+
             Factory = new Factory();
             Factory.InitiateFactory();
         }
@@ -38,28 +37,24 @@ namespace FlaskFactory
                 return instance;
             }
         }
-        public static void SetSoldSoda(ListViewItem[] items)
+
+        public void SetSoldSoda(ListViewItem[] items)
         {
-            if (Instance.IsHandleCreated)
+            this.Invoke((MethodInvoker)(() =>
             {
-                Instance.Invoke((MethodInvoker)(() =>
-                {
-                    Instance.listViewSoldSoda.Items.Clear();
-                    Instance.listViewSoldSoda.Items.AddRange(items);
-                }));
-            }
+                this.listViewSoldSoda.Items.Clear();
+                this.listViewSoldSoda.Items.AddRange(items);
+                this.listViewSoldSoda.Refresh();
+            }));
         }
 
-        public static void SetSoldBeer(ListViewItem[] items)
+        public void SetSoldBeer(ListViewItem[] items)
         {
-            if (Instance.IsHandleCreated)
+            this.Invoke((MethodInvoker)(() =>
             {
-                Instance.Invoke((MethodInvoker)(() =>
-                {
-                    Instance.listViewSoldBeer.Items.Clear();
-                    Instance.listViewSoldBeer.Items.AddRange(items);
-                }));
-            }
+                this.listViewSoldBeer.Items.Clear();
+                this.listViewSoldBeer.Items.AddRange(items);
+            }));
         }
     }
 }

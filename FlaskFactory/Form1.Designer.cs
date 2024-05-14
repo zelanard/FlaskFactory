@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("test");
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.listViewProductionBuffer = new System.Windows.Forms.ListView();
-            this.listViewBeerBuffer = new System.Windows.Forms.ListView();
-            this.listViewSodaBuffer = new System.Windows.Forms.ListView();
-            this.listViewSoldSoda = new System.Windows.Forms.ListView();
-            this.listViewSoldBeer = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
+            this.listViewProductionBuffer = new System.Windows.Forms.ListView();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
+            this.listViewBeerBuffer = new System.Windows.Forms.ListView();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
+            this.listViewSodaBuffer = new System.Windows.Forms.ListView();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.label4 = new System.Windows.Forms.Label();
+            this.listViewSoldSoda = new System.Windows.Forms.ListView();
             this.label5 = new System.Windows.Forms.Label();
+            this.listViewSoldBeer = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -78,6 +79,27 @@
             this.splitContainer1.SplitterDistance = 174;
             this.splitContainer1.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Production Buffer";
+            // 
+            // listViewProductionBuffer
+            // 
+            this.listViewProductionBuffer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewProductionBuffer.HideSelection = false;
+            this.listViewProductionBuffer.Location = new System.Drawing.Point(6, 25);
+            this.listViewProductionBuffer.Name = "listViewProductionBuffer";
+            this.listViewProductionBuffer.Size = new System.Drawing.Size(165, 425);
+            this.listViewProductionBuffer.TabIndex = 0;
+            this.listViewProductionBuffer.UseCompatibleStateImageBehavior = false;
+            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -96,6 +118,27 @@
             this.splitContainer2.SplitterDistance = 159;
             this.splitContainer2.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Beer Buffer";
+            // 
+            // listViewBeerBuffer
+            // 
+            this.listViewBeerBuffer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewBeerBuffer.HideSelection = false;
+            this.listViewBeerBuffer.Location = new System.Drawing.Point(3, 25);
+            this.listViewBeerBuffer.Name = "listViewBeerBuffer";
+            this.listViewBeerBuffer.Size = new System.Drawing.Size(153, 425);
+            this.listViewBeerBuffer.TabIndex = 0;
+            this.listViewBeerBuffer.UseCompatibleStateImageBehavior = false;
+            // 
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -113,6 +156,27 @@
             this.splitContainer3.Size = new System.Drawing.Size(459, 450);
             this.splitContainer3.SplitterDistance = 154;
             this.splitContainer3.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Soda Buffer";
+            // 
+            // listViewSodaBuffer
+            // 
+            this.listViewSodaBuffer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewSodaBuffer.HideSelection = false;
+            this.listViewSodaBuffer.Location = new System.Drawing.Point(3, 25);
+            this.listViewSodaBuffer.Name = "listViewSodaBuffer";
+            this.listViewSodaBuffer.Size = new System.Drawing.Size(148, 425);
+            this.listViewSodaBuffer.TabIndex = 0;
+            this.listViewSodaBuffer.UseCompatibleStateImageBehavior = false;
             // 
             // splitContainer4
             // 
@@ -133,41 +197,14 @@
             this.splitContainer4.SplitterDistance = 138;
             this.splitContainer4.TabIndex = 0;
             // 
-            // listViewProductionBuffer
+            // label4
             // 
-            this.listViewProductionBuffer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewProductionBuffer.HideSelection = false;
-            this.listViewProductionBuffer.Location = new System.Drawing.Point(6, 25);
-            this.listViewProductionBuffer.Name = "listViewProductionBuffer";
-            this.listViewProductionBuffer.Size = new System.Drawing.Size(165, 425);
-            this.listViewProductionBuffer.TabIndex = 0;
-            this.listViewProductionBuffer.UseCompatibleStateImageBehavior = false;
-            // 
-            // listViewBeerBuffer
-            // 
-            this.listViewBeerBuffer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewBeerBuffer.HideSelection = false;
-            this.listViewBeerBuffer.Location = new System.Drawing.Point(3, 25);
-            this.listViewBeerBuffer.Name = "listViewBeerBuffer";
-            this.listViewBeerBuffer.Size = new System.Drawing.Size(153, 425);
-            this.listViewBeerBuffer.TabIndex = 0;
-            this.listViewBeerBuffer.UseCompatibleStateImageBehavior = false;
-            // 
-            // listViewSodaBuffer
-            // 
-            this.listViewSodaBuffer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewSodaBuffer.HideSelection = false;
-            this.listViewSodaBuffer.Location = new System.Drawing.Point(3, 25);
-            this.listViewSodaBuffer.Name = "listViewSodaBuffer";
-            this.listViewSodaBuffer.Size = new System.Drawing.Size(148, 425);
-            this.listViewSodaBuffer.TabIndex = 0;
-            this.listViewSodaBuffer.UseCompatibleStateImageBehavior = false;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Soda Sold";
             // 
             // listViewSoldSoda
             // 
@@ -181,54 +218,6 @@
             this.listViewSoldSoda.TabIndex = 0;
             this.listViewSoldSoda.UseCompatibleStateImageBehavior = false;
             // 
-            // listViewSoldBeer
-            // 
-            this.listViewSoldBeer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewSoldBeer.HideSelection = false;
-            this.listViewSoldBeer.Location = new System.Drawing.Point(3, 25);
-            this.listViewSoldBeer.Name = "listViewSoldBeer";
-            this.listViewSoldBeer.Size = new System.Drawing.Size(153, 425);
-            this.listViewSoldBeer.TabIndex = 0;
-            this.listViewSoldBeer.UseCompatibleStateImageBehavior = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Production Buffer";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Beer Buffer";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Soda Buffer";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Soda Sold";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -237,6 +226,20 @@
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "Beer Sold";
+            // 
+            // listViewSoldBeer
+            // 
+            this.listViewSoldBeer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewSoldBeer.HideSelection = false;
+            this.listViewSoldBeer.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
+            this.listViewSoldBeer.Location = new System.Drawing.Point(3, 25);
+            this.listViewSoldBeer.Name = "listViewSoldBeer";
+            this.listViewSoldBeer.Size = new System.Drawing.Size(153, 425);
+            this.listViewSoldBeer.TabIndex = 0;
+            this.listViewSoldBeer.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 

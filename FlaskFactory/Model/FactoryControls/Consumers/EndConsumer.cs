@@ -1,5 +1,6 @@
 ﻿using FlaskFactory.Utils;
 using System.Collections.Generic;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace FlaskFactory.Model.FactoryControls
@@ -48,18 +49,19 @@ namespace FlaskFactory.Model.FactoryControls
                         {
                             case FlaskTypes.SodaFlask:
                                 {
-                                    Form1.SetSoldSoda(Consumed.ToArray());
+                                    Form1.Instance.SetSoldSoda(Consumed.ToArray());
                                 }
                                 break;
                             case FlaskTypes.BeerFlask:
                                 {
-                                    Form1.SetSoldBeer(Consumed.ToArray());
+                                    Form1.Instance.SetSoldBeer(Consumed.ToArray());
                                 }
                                 break;
                         }
                         CurrentFlask = null;
                     }
                 }
+                Thread.Sleep(100);
             }
         }
     }
