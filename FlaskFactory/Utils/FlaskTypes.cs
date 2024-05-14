@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlaskFactory.Model.Flasks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,22 @@ namespace FlaskFactory.Utils
     {
         BeerFlask,
         SodaFlask
+    }
+
+    public static class FlaskExtensions
+    {
+        public static FlaskTypes GetFlaskType(this Flask flask)
+        {
+            switch (flask)
+            {
+                case BeerFlask beerFlask:
+                    return FlaskTypes.BeerFlask;
+                case SodaFlask sodaFlask:
+                    return FlaskTypes.SodaFlask;
+                default:
+                    throw
+                        new NotImplementedException();
+            }
+        }
     }
 }
