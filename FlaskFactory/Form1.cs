@@ -40,14 +40,26 @@ namespace FlaskFactory
         }
         public static void SetSoldSoda(ListViewItem[] items)
         {
-            Form1.Instance.listViewSoldSoda.Items.Clear();
-            Form1.Instance.listViewSoldSoda.Items.AddRange(items);
-        }
-        public static void SetSoldBeer(ListViewItem[] items)
-        {
-            Form1.Instance.listViewSoldBeer.Items.Clear();
-            Form1.Instance.listViewSoldBeer.Items.AddRange(items);
+            if (Instance.IsHandleCreated)
+            {
+                Instance.Invoke((MethodInvoker)(() =>
+                {
+                    Instance.listViewSoldSoda.Items.Clear();
+                    Instance.listViewSoldSoda.Items.AddRange(items);
+                }));
+            }
         }
 
+        public static void SetSoldBeer(ListViewItem[] items)
+        {
+            if (Instance.IsHandleCreated)
+            {
+                Instance.Invoke((MethodInvoker)(() =>
+                {
+                    Instance.listViewSoldBeer.Items.Clear();
+                    Instance.listViewSoldBeer.Items.AddRange(items);
+                }));
+            }
+        }
     }
 }
