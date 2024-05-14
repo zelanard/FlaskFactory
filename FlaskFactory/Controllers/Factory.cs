@@ -114,6 +114,11 @@ namespace FlaskFactory.Controllers
             Thread SodaConsumerThread = new Thread(SodaEndConsumer.Consume);
             Thread BeerConsumerThread = new Thread(SodaEndConsumer.Consume);
 
+            ProducerThread.IsBackground = true;
+            SplitterThread.IsBackground = true;
+            SodaConsumerThread.IsBackground = true;
+            BeerConsumerThread.IsBackground = true;
+
             ProducerThread.Start();
             SplitterThread.Start();
             SodaConsumerThread.Start();

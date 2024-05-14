@@ -1,29 +1,47 @@
-﻿using FlaskFactory.Model.Flasks;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using FlaskFactory.Model.Flasks;
 
 namespace FlaskFactory.Model.FactoryControls
 {
-    /// <summary>
-    /// Represents a buffer that holds a collection of flasks temporarily during production.
-    /// </summary>
     public class Buffer
     {
-        /// <summary>
-        /// The maximum number of flasks that the buffer can hold.
-        /// </summary>
         public const int MAX_SIZE = 100;
+        private Queue<Flask> buffer;
+        private readonly object lockObject = new object();
 
-        /// <summary>
-        /// A queue to store the flasks in the order they were added.
-        /// </summary>
-        public Queue<Flask> buffer;
-
-        /// <summary>
-        /// Initializes a new instance of the Buffer class.
-        /// </summary>
         public Buffer()
         {
             buffer = new Queue<Flask>();
+        }
+
+        public void Enqueue(Flask item)
+        {
+            lock (lockObject)
+            {
+                if (buffer.Count < MAX_SIZE)
+                {
+                    buffer.Enqueue(item);
+                }
+            }
+        }
+
+        public Flask Dequeue()
+        {
+            lock (lockObject)
+            {
+                return buffer.Count > 0 ? buffer.Dequeue() : null;
+            }
+        }
+
+        public int Count
+        {
+            get
+            {
+                lock (lockObject)
+                {
+                    return buffer.Count;
+                }
+            }
         }
     }
 }

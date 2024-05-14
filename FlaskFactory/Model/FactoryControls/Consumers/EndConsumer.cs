@@ -1,6 +1,5 @@
 ﻿using FlaskFactory.Utils;
 using System.Collections.Generic;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace FlaskFactory.Model.FactoryControls
@@ -38,35 +37,27 @@ namespace FlaskFactory.Model.FactoryControls
         {
             while (true)
             {
-                if (Buffer.buffer.Count > 0)
+                if (Buffer.Count > 0)
                 {
                     Pull();
-                    try
+                    if (CurrentFlask != null)
                     {
-                        if (CurrentFlask != null)
+                        FlaskTypes flaskType = CurrentFlask.GetFlaskType();
+                        Consumed.Add(new ListViewItem(Print()));
+                        switch (flaskType)
                         {
-                            Monitor.Enter(CurrentFlask);
-                            FlaskTypes flaskType = CurrentFlask.GetFlaskType();
-                            Consumed.Add(new ListViewItem(Print()));
-                            switch (flaskType)
-                            {
-                                case FlaskTypes.SodaFlask:
-                                    {
-                                        Form1.SetSoldSoda((ListViewItem[])Consumed.ToArray().Clone());
-                                    }
-                                    break;
-                                case FlaskTypes.BeerFlask:
-                                    {
-                                        Form1.SetSoldBeer((ListViewItem[])Consumed.ToArray().Clone());
-                                    }
-                                    break;
-                            }
-                            Monitor.Exit(CurrentFlask);
-                            CurrentFlask = null;
+                            case FlaskTypes.SodaFlask:
+                                {
+                                    Form1.SetSoldSoda(Consumed.ToArray());
+                                }
+                                break;
+                            case FlaskTypes.BeerFlask:
+                                {
+                                    Form1.SetSoldBeer(Consumed.ToArray());
+                                }
+                                break;
                         }
-                    }
-                    finally
-                    {
+                        CurrentFlask = null;
                     }
                 }
             }

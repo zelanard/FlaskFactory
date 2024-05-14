@@ -35,7 +35,7 @@ namespace FlaskFactory.Model.FactoryControls
         {
             try
             {
-            CurrentFlask = Buffer.buffer.Dequeue();
+            CurrentFlask = Buffer.Dequeue();
             }
             catch(Exception e)
             {

@@ -36,10 +36,10 @@ namespace FlaskFactory.Model.FactoryControls
             switch (flaskType)
             {
                 case FlaskTypes.SodaFlask:
-                    Buffer.buffer.Enqueue(new SodaFlask(idCounter++));
+                    Buffer.Enqueue(new SodaFlask(idCounter++));
                     break;
                 case FlaskTypes.BeerFlask:
-                    Buffer.buffer.Enqueue(new BeerFlask(idCounter++));
+                    Buffer.Enqueue(new BeerFlask(idCounter++));
                     break;
                 default:
                     break;
@@ -51,7 +51,7 @@ namespace FlaskFactory.Model.FactoryControls
             int count = 0;
             while (true)
             {
-                if (Buffer.buffer.Count < Buffer.MAX_SIZE)
+                if (Buffer.Count < Buffer.MAX_SIZE)
                 {
                     count++;
                     FlaskTypes[] flaskType = (FlaskTypes[])Enum.GetValues(typeof(FlaskTypes));

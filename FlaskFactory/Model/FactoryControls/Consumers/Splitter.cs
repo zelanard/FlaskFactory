@@ -40,10 +40,10 @@ namespace FlaskFactory.Model.FactoryControls
             switch (CurrentFlask)
             {
                 case BeerFlask beerFlask:
-                    BeerBuffer.buffer.Enqueue(CurrentFlask);
+                    BeerBuffer.Enqueue(CurrentFlask);
                     break;
                 case SodaFlask sodaFlask:
-                    SodaBuffer.buffer.Enqueue(CurrentFlask);
+                    SodaBuffer.Enqueue(CurrentFlask);
                     break;
                 default:
                     throw new InvalidOperationException("Unknown flask type.");
@@ -54,12 +54,12 @@ namespace FlaskFactory.Model.FactoryControls
         {
             while (true)
             {
-                if (Buffer.buffer.Count > 0 && CurrentFlask == null)
+                if (Buffer.Count > 0 && CurrentFlask == null)
                 {
                     Pull();
                 }
 
-                if (CurrentFlask != null && Buffer.buffer.Count > 0)
+                if (CurrentFlask != null && Buffer.Count > 0)
                 {
                     Push(CurrentFlask.GetFlaskType());
                     CurrentFlask = null;

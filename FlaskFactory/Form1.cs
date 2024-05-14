@@ -16,10 +16,16 @@ namespace FlaskFactory
         private Factory Factory;
         public Form1()
         {
+            InitializeComponent();
+            this.Shown += Form1_Shown;
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
             Factory = new Factory();
             Factory.InitiateFactory();
-            InitializeComponent();
         }
+
         private static Form1 instance;
         public static Form1 Instance
         {
